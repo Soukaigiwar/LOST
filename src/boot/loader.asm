@@ -16,57 +16,35 @@
 ;; You should have received a copy of the GNU General Public License
 ;; along with this program.  If not, see <https://www.gnu.org/licenses/>.
 ;; ----------------------------------------------------------------------------
-;; BOOT
+;; BOOTLOADER - Antes de carregar o kernel.
 ;; ----------------------------------------------------------------------------
 org 0x7c00
 bits 16
 
-%define EOL 0x0d, 0x0a
-
 main:
-	; Configurar segmento de dados...
+	; Iniciar segmento de dados com 0x0...
 	mov ax, 0
 	mov ds, ax
 	mov es, ax
-
-	; Configurar a pilha...
 	mov ss, ax
+
+	; Definir o endereço inicial na pilha...
 	mov sp, 0x7c00
 
 	; Impressão da mensagem na tela...
-	mov si, msg
-	call put_str
+	mov si, hello_msg
+	call puts
 
+halt:
 	; Parada da CPU...
 	hlt
-	jmp $
+	jmp halt
 
-put_str:
-	; Salvar registradores que serão alterados...
-	push si
-	push ax
-	push bx
+%define EOL 0x0d, 0x0a
+%include "src/lib/stdio/puts.asm"
 
-.until_null:		; Loop através dos bytes da string.
-	lodsb		; Copia o caractere seguinte em {al}.
-	or al, al	; Verifica se o byte em {al} é nulo (0x0).
-	jz .done	; Termina o loop se encontrar o byte 0x00.
-
-	mov ah, 0x0e	; Imprimir caracteres no modo texto.
-	mov bh, 0	; Página do modo texto: 0
-	int 0x10	; Interrupção 0x10 do BIOS: funções de vídeo.
-
-	jmp .until_null	; Continua o loop se não for um caractere nulo.
-
-.done:
-	; Restaurar registradores que foram alterados...
-	pop bx
-	pop ax
-	pop si
-
-	ret
-
-msg: db EOL, 'Make yourself free to be LOS/T', EOL, 0
+loading_msg: db 'Loading...', EOL, 0
+hello_msg:   db 'Make yourself free to be LOS/T', EOL, 0
 
 times 510-($-$$) db 0
 dw 0xaa55

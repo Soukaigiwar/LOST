@@ -54,6 +54,7 @@ sudo apt install build-essential qemu nasm
 1. [Como o BIOS encontra o sistema operacional](doc/01-como-o-bios-encontra-o-os.md)
 1. [Diretivas e instruções](doc/02-diretivas-e-instrucoes.md)
 1. [Endereçamento de memória](doc/03-enderecamento-de-memoria.md)
+1. [Boot mínimo](doc/04-boot-minimo.md)
 
 ## Scripts de montagem
 
