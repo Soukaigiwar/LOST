@@ -66,9 +66,7 @@ sudo apt install build-essential qemu nasm
 ```
 .
 |-- doc
-|   |-- 01-como-o-bios-encontra-o-os.md
-|   |-- 02-diretivas-e-instrucoes.md
-|   `-- 03-enderecamento-de-memoria.md
+|   `-- ...
 |-- src
 |   |-- boot
 |   |   |-- kernel.asm
@@ -78,6 +76,8 @@ sudo apt install build-essential qemu nasm
 |       |   `-- fat12header.asm
 |       `-- stdio
 |           `-- puts.asm
+|-- tmp
+|   `-- ...
 |-- LICENSE
 |-- make
 |-- README.md
