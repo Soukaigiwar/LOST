@@ -38,7 +38,7 @@ $ xxd teste.bin
 ## Testando no QEMU
 
 ```
-$ cp teste.bin build/teste.img
+$ cp teste.bin teste.img
 $ truncate -s 1440k teste.img
 $ qemu-system-i386 -drive file=teste.img,format=raw,index=0,if=floppy
 ```
