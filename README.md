@@ -1,15 +1,28 @@
-# LOS/T - Learning OS/Tutorial
+# LOS/T - Learning Operating Systems Together
 
-Série sobre a criação de um sistema operacional do zero para fins de aprendizado.
+Criação coletiva de um sistema operacional do zero para fins de aprendizado.
 
-> **Este material está em construção!**
+> **Este material está em constante construção!**
 
 ## Objetivos
+
+- Este não é um curso.
+- Este é um projeto de construção coletiva de conhecimento.
+- A ideia é a gente se divertir enquanto aprende!
 
 ### Fase 1
 
 - Dar boot numa máquina virtual e imprimir uma mensagem.
 - Carregar um kernel mínimo em outra região da imagem do disco.
+
+### Fase 2
+
+- Sistema de arquivos
+- Criação de alguns progranas (mini-games)
+
+### Fase 3
+
+- Criação de um shell mínimo
 
 ## Fontes de pesquisa
 
