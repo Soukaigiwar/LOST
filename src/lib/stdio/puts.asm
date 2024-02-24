@@ -10,12 +10,12 @@ puts:
 	push bx
 
 .until_null:
-	; Carregar sequencialmente em {al} cada byte no andereço em {si}...
+	; Carregar sequencialmente em {al} cada byte no endereço em {si}...
 	lodsb
 	or al, al
 	jz .done
 
-	; Imprime o caracetre em {al}...
+	; Imprime o caractere em {al}...
 	mov ah, 0x0e
 	mov bh, 0
 	int 0x10
