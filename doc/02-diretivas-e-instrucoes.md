@@ -2,7 +2,7 @@
 
 ## Diretivas
 
-- Determinam como o montador deverá compilar o código.
+- Determinam como o montador deverá gerar o código.
 - Não são traduzidas em código de máquina.
 - Diferem de montador para montador.
 
@@ -10,4 +10,5 @@
 
 - Determinam o que a CPU deverá executar.
 - São traduzidas em código de máquina.
-- Conjuntos de códigos de operação (OpCodes) da CPU.
+- Conjunto de códigos de operação (OpCodes) da CPU.
+- Diferem de arquitetura para arquitetura.
