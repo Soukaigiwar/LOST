@@ -1,0 +1,12 @@
+#!/bin/bash
+
+nasm ${1:?'Faltou o nome do arquivo!'} -f bin -o boot.bin || { echo 'Erro! Saindo...'; exit 1; }
+
+read -p 'Abrir no Qemu agora (S/n)? '
+
+[[ ${REPLY,,} == n ]] && exit
+
+
+qemu-system-i386 -drive file=boot.bin,format=raw,index=0,if=floppy -boot order=a & disown
+
+

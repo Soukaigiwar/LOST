@@ -2,9 +2,9 @@
 
 - A CPU 8086 tinha um barramento de endereços de 20 bits.
 - Endereçamento máximo 2^20 bytes: 1.048.576 bytes ≃ 1MB.
-- Computadores tinha de 64kB a 128kB de memória.
-- Como o limite era muito maior, decidiu-se usar um esquema de memória definido *segmentos* e *offsets*.
-- Desta forma, o endereçamento era feito com um par de valores com 16 bits.
+- Computadores tinham de 64kB a 128kB de memória.
+- Como o limite era muito maior, decidiu-se usar um esquema de memória definindo *segmentos* e *offsets*.
+- Desta forma, o endereçamento era feito com um par de valores de 16 bits.
 
 ## Esquema de segmentos e offset
 
@@ -85,4 +85,7 @@ array: dw 100, 200, 300
     mov si, 2 * 2       ; Copia 4 para {si} (será o offset de array[2]).
     mov ax, [bx + si]   ; Copia para {ax} o conteúdo no endereço base em {bx} + 4 bytes.
 ```
+
+
+
 

@@ -1,33 +1,27 @@
 %ifndef PUTS
 %define PUTS
 ;
-; Imprime string no endereço passado em {si}
+; Imprime a string no endereço passado em {si}
+; até encontrar o byte 0x00.
 ;
 puts:
-	; Salvar registradores que serão alterados...
-	push si
-	push ax
-	push bx
+    push si
+    push ax
+
+    mov ah, 0x0e
 
 .until_null:
-	; Carregar sequencialmente em {al} cada byte no endereço em {si}...
-	lodsb
-	or al, al
-	jz .done
+    lodsb
+    or al, al
+    jz .done
 
-	; Imprime o caractere em {al}...
-	mov ah, 0x0e
-	mov bh, 0
-	int 0x10
-
-	jmp .until_null
+    int 0x10
+    jmp .until_null
 
 .done:
-	; Restaurar registradores que foram alterados...
-	pop bx
-	pop ax
-	pop si
+    pop ax
+    pop si
 
-	ret
+    ret
 
 %endif

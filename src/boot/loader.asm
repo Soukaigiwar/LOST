@@ -18,34 +18,53 @@
 ;; ----------------------------------------------------------------------------
 ;; BOOTLOADER - Antes de carregar o kernel.
 ;; ----------------------------------------------------------------------------
-org 0x7c00
 bits 16
+org 0x7c00
 
 main:
-	; Iniciar segmento de dados com 0x0...
-	mov ax, 0
-	mov ds, ax
-	mov es, ax
-	mov ss, ax
-
-	; Definir o endereço inicial na pilha...
-	mov sp, 0x7c00
-
-	; Impressão da mensagem na tela...
-	mov si, hello_msg
-	call puts
-
+; -----------------------------------------------------------------------------
+; Definição dos segmentos de dados...
+; -----------------------------------------------------------------------------
+    xor ax, ax      ; Registra 0x0000 em AX
+    mov ds, ax      ; Segmento de Dados DS=AX=0x0000
+    mov es, ax      ; Segmento de Dados ES=AX=0x0000
+; -----------------------------------------------------------------------------
+; Definição do topo da pilha...
+; -----------------------------------------------------------------------------
+    mov ss, ax      ; Segmento do endereçamento da pilha: SS=AX=0x0000
+    mov sp, 0x7c00  ; Todos os 'push' serão endereçados a partir daqui
+; -----------------------------------------------------------------------------
+; Limpar a tela...
+; -----------------------------------------------------------------------------
+clr_screen:
+    mov al, 0x03    ; AX=0x0003 = Modo texto VGA 80x25, char 9x16, 16 cores
+    int 0x10
+; -----------------------------------------------------------------------------
+; Imprimir mensagem...
+; -----------------------------------------------------------------------------
+print_str:
+    mov ah, 0x0e        ; Escrever caractere no TTY
+    mov cx, pad - msg   ; Contador recebe tamanho da string
+    mov si, msg         ; {si} recebe endereço da string
+.char_loop:
+    lodsb               ; Carrega byte corrente em {al} e incrementa o endereço
+    int 0x10
+    loop .char_loop     ; Repete e decrementa o contador
+; -----------------------------------------------------------------------------
+; Parada da CPU...
+; -----------------------------------------------------------------------------
 halt:
-	; Parada da CPU...
-	hlt
-	jmp halt
+    cli                 ; Limpa a flag de interrupções
+    hlt                 ; Para a CPU
+; -----------------------------------------------------------------------------
+; DATA
+; -----------------------------------------------------------------------------
+msg:
+    db 'Loading OS...'
 
-%define EOL 0x0d, 0x0a
-%include "src/lib/stdio/puts.asm"
+pad:
+    times 510-($-$$) db 0
 
-loading_msg: db 'Loading...', EOL, 0
-hello_msg:   db 'Make yourself free to be LOS/T', EOL, 0
-
-times 510-($-$$) db 0
-dw 0xaa55
+sig:
+    dw 0xaa55
 

@@ -20,6 +20,6 @@ $ truncate -s 1440k ARQUIVO.img
 ## Teste no Qemu
 
 ```
-$ qemu-system-i386 -drive file=ARQUIVO.img,format=raw,index=0,if=floppy
+$ qemu-system-i386 -drive file=ARQUIVO.img,format=raw,index=0,if=floppy -boot order=a
 ```
 

@@ -43,6 +43,9 @@ $ truncate -s 1440k teste.img
 $ qemu-system-i386 -drive file=teste.img,format=raw,index=0,if=floppy
 ```
 
+> **Nota:** o binário inicial (`.bin`) pode ser executado diretamente no Qemu
+> nas etapas iniciais dos testes.
+
 Resultando em...
 
 ![Janela do QEMU](pic/boot-min-screen.png)

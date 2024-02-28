@@ -18,7 +18,7 @@ Criação coletiva de um sistema operacional do zero para fins de aprendizado.
 ### Fase 2
 
 - Sistema de arquivos
-- Criação de alguns progranas (mini-games)
+- Criação de alguns progranas (mini-games?)
 
 ### Fase 3
 
@@ -31,6 +31,7 @@ Criação coletiva de um sistema operacional do zero para fins de aprendizado.
 - [BIOS Interrupt Call - Wikipedia](https://en.wikipedia.org/wiki/BIOS_interrupt_call)
 - [Interrupt Vector Table (IVT) - Wikipedia](https://en.wikipedia.org/wiki/Interrupt_vector_table)
 - [Interrupt Services DOS/BIOS/EMS/Mouse - HelpPC](https://stanislavs.org/helppc/idx_interrupt.html)
+- [DOS, BIOS & Extensions Service Index (bem melhor!)](http://www.techhelpmanual.com/27-dos__bios___extensions_service_index.html)
 - [Real Mode - OS Dev](https://wiki.osdev.org/Real_Mode)
 - [Segmentação - OS Dev](https://wiki.osdev.org/Segmentation)
 - [FAT - OS Dev](https://wiki.osdev.org/FAT)
@@ -68,6 +69,9 @@ sudo apt install build-essential qemu nasm
 1. [Diretivas e instruções](doc/02-diretivas-e-instrucoes.md)
 1. [Endereçamento de memória](doc/03-enderecamento-de-memoria.md)
 1. [Boot mínimo](doc/04-boot-minimo.md)
+1. [Inicialização dos segmentos de dados](doc/05-inicializacao-dos-segmentos-de-dados.md) 
+1. [Pilha](doc/06-pilha.md)
+1. [Iniciando a pilha](doc/07-iniciando-a-pilha.md)
 
 ## Scripts de montagem
 

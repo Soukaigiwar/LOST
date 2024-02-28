@@ -1,27 +1,23 @@
-org 0x7c00
 bits 16
+org 0x7c00
 
 main:
 
 print_str:
-	mov ah, 0x0e	; Serão os mesmos dados durante o loop.
-	mov bh, 0	;
-	mov si, hello	; 
-
-.until_null:
-	lodsb		; O mesmo que:	mov al, [si]
-			;		inc si
-	int 0x10
-
-	test al, al
-	jnz .until_null
+	mov si, hello
+    mov ah, 0x0e
+.next_char:
+    lodsb
+    or al, al
+    jz halt
+    int 0x10
+    jmp .next_char
 
 halt:
-	jmp $
+	cli
+    hlt
 
-%define EOL 0x0d, 0x0a
-
-hello: db 'Welcome to LOS/T!', EOL, 0
+hello: db 'Welcome to LOS/T!', 0
 
 times 510-($-$$) db 0
 dw 0xaa55
