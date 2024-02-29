@@ -1,6 +1,8 @@
-bits 16
-org 0x7c00
-
+    bits 16
+    org 0x7c00
+;
+; TEXT
+;
 main:
     ;
 	; Definir segmentos de dados...
@@ -16,20 +18,26 @@ main:
 
 print_msg:
     ;
-	; Imprimir mensagem no TTY (com contador)...
+	; Imprimir string com 'loop for'...
     ;
     mov ah, 0x0e
     mov cx, pad - msg
 	mov si, msg
 .next_char:
     lodsb
-    int 0x010
+    int 0x10
     loop .next_char
-	
+
 halt:
+    ;
+    ; Parada da CPU...
+    ;
     cli
 	hlt
 
+;
+; DATA
+;
 msg:
     db 'Loading OS...'
 

@@ -1,9 +1,14 @@
+;
+; MACROS E DIRETIVAS
+;
 %define TIMER  0x046c
 %define ORIGIN 0x7c00
 
-bits 16
-org ORIGIN
-
+    bits 16
+    org ORIGIN
+;
+; TEXT
+;
 main:
     ;
 	; Definir segmentos de dados...
@@ -27,7 +32,7 @@ wait_timer:
     ; 1s ~ 18.2 ticks => 3s ~ 55 ticks
     ;
     ; Ver BIOS Data Area em...
-    ; http://www.techhelpmanual.com/93-rom_bios_variables.html 
+    ; http://www.techhelpmanual.com/93-rom_bios_variables.html
     ;
     mov cx, 3 * 18      ; Total de ticks para ~3 segundos
 	mov bx, [TIMER]     ; Valor inicial no timer do BIOS
@@ -66,9 +71,14 @@ print_msg:
     loop .next_char
 
 halt:
+    ;
+    ; Parada da CPU...
+    ;
 	cli
 	hlt
-
+;
+; DATA
+;
 msg:
 	db `Loading...`
 pad:

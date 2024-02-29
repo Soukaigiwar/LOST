@@ -1,11 +1,13 @@
-bits 16
-org 0x7c00
-
+    bits 16
+    org 0x7c00
+;
+; TEXT
+;
 main:
     ;
 	; Definir segmentos de dados...
     ;
-	mov ax, 0
+	xor ax, ax
 	mov ds, ax
 	mov es, ax
     ;
@@ -25,7 +27,7 @@ clear_screen:
 
 print_msg:
     ;
-	; Imprimir mensagem em cores
+	; Imprimir string...
     ;
     ; AH 0x13 => Imprimir string
     ; AL 0x01 => Atualizar posição do cursor
@@ -44,13 +46,20 @@ print_msg:
     int 0x10
 
 halt:
+    ;
+    ; Parada da CPU...
 	cli
 	hlt
 
+;
+; DATA
+;
 msg:
 	db `Welcome to LOS/T!\r\nLoading...`
+
 pad:
 	times 510-($-$$) db 0
+
 sig:
 	dw 0xaa55
 
