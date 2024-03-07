@@ -12,3 +12,8 @@
 - São traduzidas em código de máquina.
 - Conjunto de códigos de operação (OpCodes) da CPU.
 - Diferem de arquitetura para arquitetura.
+
+---
+
+[Voltar](../README.md#conceitos)
+

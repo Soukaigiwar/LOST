@@ -89,3 +89,8 @@ array: dw 100, 200, 300
 
 
 
+
+---
+
+[Voltar](../README.md#conceitos)
+

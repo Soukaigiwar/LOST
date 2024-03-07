@@ -12,3 +12,8 @@
 - O BIOS procura pela partição especial EFI.
 - O sistema operacional deve ser compilado com um programa de EFI.
 
+
+---
+
+[Voltar](../README.md#conceitos)
+

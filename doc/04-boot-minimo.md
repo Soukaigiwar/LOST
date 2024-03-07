@@ -51,4 +51,7 @@ Resultando em...
 ![Janela do QEMU](pic/boot-min-screen.png)
 
 
+---
+
+[Voltar](../README.md#conceitos)
 

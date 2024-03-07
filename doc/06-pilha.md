@@ -32,3 +32,8 @@ mais        | 3 | 2 | 1 | 0 |   mais
 baixos    --+---+---+---+---+-- altos
 ```
 
+
+---
+
+[Voltar](../README.md#conceitos)
+

@@ -34,3 +34,8 @@ RAM  | IVT | BIOS DATA |   (~30k)    | Código do boot (512 bytes) |
 ```
 
 
+
+---
+
+[Voltar](../README.md#conceitos)
+

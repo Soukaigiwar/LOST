@@ -60,7 +60,7 @@ Criação coletiva de um sistema operacional do zero para fins de aprendizado.
 - Hex dump: [xxd](https://manpages.debian.org/unstable/xxd/xxd.1.en.html)
 
 ```
-sudo apt install build-essential qemu nasm
+sudo apt install build-essential qemu nasm mtools
 ```
 
 ## Conceitos
@@ -72,6 +72,9 @@ sudo apt install build-essential qemu nasm
 1. [Inicialização dos segmentos de dados](doc/05-inicializacao-dos-segmentos-de-dados.md) 
 1. [Pilha](doc/06-pilha.md)
 1. [Iniciando a pilha](doc/07-iniciando-a-pilha.md)
+1. [Funções do bootloader](doc/08-funcoes-do-bootloader.md)
+1. [Discos flexíveis (*floppy disks*)](doc/09-floppy-disks.md)
+1. [Layout de discos](doc/10-layout-de-discos.md)
 
 ## Scripts de montagem
 
