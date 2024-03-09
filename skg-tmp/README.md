@@ -5,6 +5,8 @@
 
 `make run` Para fazer o mesmo acima e executar o QEMU. 
 
+`make xxd` Para fazer o mesmo acima e executar o XXD.
+
 Um comando não depende do outro, se digitar `make run` automaticamente vai executar o primeiro antes.
 
 Basta criar um arquivo chamado `makefile`, inserir o código abaixo e usar.
