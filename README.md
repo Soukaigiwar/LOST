@@ -4,6 +4,9 @@ Criação coletiva de um sistema operacional do zero para fins de aprendizado.
 
 > **Este material está em constante construção!**
 
+- [Playlist no Youtube](https://youtube.com/playlist?list=PLXoSGejyuQGpIS8dyHzvdB1vs45ZWzOBe&si=vWhv8prTm3MIiKsT)
+- [Assistir ao vivo](https://twitch.tv/blauaraujo)
+
 ## Objetivos
 
 - Este não é um curso.
