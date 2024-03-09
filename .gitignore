@@ -1,3 +1,4 @@
 build/
+skg-tmp/build/
 *.img
 *.bin
