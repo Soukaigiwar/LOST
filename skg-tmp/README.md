@@ -31,6 +31,9 @@ run: $(IMG_NAME)
 	ls -la ./build
 	qemu-system-i386 -drive file=$(IMG_NAME),format=raw,index=0,if=floppy
 
+xxd: $(IMG_NAME)
+	xxd $(EXE_NAME).bin
+
 $(IMG_NAME): $(EXE_NAME)
 	cp $(OUT_DIR)/$(SRC_NAME).bin $(IMG_NAME)
 	truncate -s 1440k $(IMG_NAME)
