@@ -3,7 +3,7 @@ OUT_DIR = ./build
 EXE_NAME = $(OUT_DIR)/$(SRC_NAME)
 IMG_NAME = $(OUT_DIR)/$(SRC_NAME).img
 
-all: $(EXE_NAME)
+all: $(IMG_NAME)
 	ls -la ./build
 
 run: $(IMG_NAME)
