@@ -6,10 +6,11 @@ IMG_NAME = $(OUT_DIR)/$(SRC_NAME).img
 all: $(EXE_NAME)
 	ls -la ./build
 
-run: $(EXE_NAME)
+run: $(IMG_NAME)
+	ls -la ./build
 	qemu-system-i386 -drive file=$(IMG_NAME),format=raw,index=0,if=floppy
 
-$(BOOT_NAME): $(EXE_NAME)
+$(IMG_NAME): $(EXE_NAME)
 	cp $(OUT_DIR)/$(SRC_NAME).bin $(IMG_NAME)
 	truncate -s 1440k $(IMG_NAME)
 
